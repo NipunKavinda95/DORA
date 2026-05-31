@@ -254,34 +254,10 @@ textarea.scroll-hide:focus { outline: none !important; box-shadow: none !importa
 footer, .built-with { display: none !important; }
 """
 
-demo = gr.ChatInterface(
+gr.Interface(
     fn=query_doc,
-    title="DORA — DDS Organizational Resource Assistant",
-    description="Decoding Data Science · Ask about leave, policies, benefits, and more",
-    chatbot=gr.Chatbot(height=460),
-    textbox=gr.Textbox(
-        placeholder="Type your HR question here..."
-    examples=[
-        "What are the standard working hours in Dubai?",
-        "How do I apply for annual leave?",
-        "What is the remote work policy?",
-        "Tell me about the employee benefits package",
-    ],
-    css=css,
-    theme=gr.themes.Base(
-        primary_hue=gr.themes.colors.purple,
-        neutral_hue=gr.themes.colors.gray,
-    ).set(
-        body_background_fill="#0a0b10",
-        body_background_fill_dark="#0a0b10",
-        block_background_fill="transparent",
-        block_background_fill_dark="transparent",
-        block_border_width="0px",
-        input_background_fill="#12131e",
-        input_background_fill_dark="#12131e",
-
-    ),
-)
-
-if __name__ == "__main__":
-    demo.launch()
+    inputs=gr.Textbox(label="Ask a question about the document"),
+    outputs=gr.Textbox(label="Answer"),
+    title="DORA-DDS Organizational Resources Assistance",
+    description="Ask questions related to HR for the latest Information."
+).launch(share=True)
