@@ -71,9 +71,16 @@ dimension = 1536
 # --- Delete index if it already exists (optional) ---
 existing_indexes = [idx["name"] for idx in pc.list_indexes()]
 
-if index_name in existing_indexes:
-    pc.delete_index(index_name)
-
+if index_name not in existing_indexes:
+    pc.create_index(
+        name=index_name,
+        dimension=dimension,
+        metric="euclidean",
+        spec=ServerlessSpec(
+            cloud="aws",
+            region="us-east-1"
+        ),
+    )
 # --- Create Pinecone index ---
 pc.create_index(
     name=index_name,
@@ -155,7 +162,7 @@ footer {display:none !important;}
 }
 """
 
-with gr.Blocks(css=custom_css) as demo:
+with gr.Blocks() as demo:
 
     with gr.Column(elem_classes="main-container"):
 
@@ -165,7 +172,7 @@ with gr.Blocks(css=custom_css) as demo:
                  class="logo">
 
             <div class="title">
-                DDS Enterprise HR Assistant
+                DORA- Decoding Data Science Organizational Resources Assistance
             </div>
 
             <div class="subtitle">
@@ -235,4 +242,4 @@ with gr.Blocks(css=custom_css) as demo:
             outputs=[question, answer]
         )
 
-demo.launch(share=True)
+demo.launch(css=custom_css)
