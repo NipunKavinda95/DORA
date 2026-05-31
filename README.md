@@ -6,7 +6,7 @@ colorTo: indigo
 sdk: gradio
 sdk_version: 6.15.2
 python_version: '3.13'
-app_file: app2.py
+app_file: app3.py
 pinned: false
 license: mit
 short_description: Decoding Data Science Organizational Resources Assistance
