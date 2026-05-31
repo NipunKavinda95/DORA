@@ -258,16 +258,9 @@ demo = gr.ChatInterface(
     fn=query_doc,
     title="DORA — DDS Organizational Resource Assistant",
     description="Decoding Data Science · Ask about leave, policies, benefits, and more",
-    chatbot=gr.Chatbot(
-        height=460,
-        show_label=False,
-        placeholder="<div style='text-align:center; color:rgba(255,255,255,0.15); font-size:16px; padding-top:80px'>Ask DORA anything about HR policies, leave, or benefits</div>",
-    ),
+    chatbot=gr.Chatbot(height=460),
     textbox=gr.Textbox(
-        placeholder="Type your HR question here… (Enter to send)",
-        show_label=False,
-        scale=7,
-    ),
+        placeholder="Type your HR question here..."
     examples=[
         "What are the standard working hours in Dubai?",
         "How do I apply for annual leave?",
