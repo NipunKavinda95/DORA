@@ -1,4 +1,8 @@
 llama-index
 llama-index-vector-stores-pinecone
+llama_index.llms.openai
+llama_index.embeddings.openai
 llama-index-readers-file
 gradio
+llama_index.core
+pinecone
