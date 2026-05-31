@@ -1,0 +1,4 @@
+llama-index
+llama-index-vector-stores-pinecone
+llama-index-readers-file
+gradio
