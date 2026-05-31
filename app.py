@@ -117,6 +117,14 @@ index = VectorStoreIndex.from_documents(
 # --- Query Engine ---
 query_engine = index.as_query_engine(system_prompt=system_prompt)
 
+def query_doc(prompt):
+    try:
+        response = query_engine.query(prompt)
+        return str(response)
+    except Exception as e:
+        return f"Error: {str(e)}"
+
+
 css = """
 /* Page background */
 body, .gradio-container, gradio-app, .app {
