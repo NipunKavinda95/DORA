@@ -124,25 +124,11 @@ def query_doc(prompt):
     except Exception as e:
         return f"Error: {str(e)}"
 
-custom_css = """
-footer {display:none !important;}
-.gradio-container {
-    max-width: 900px !important;
-    margin: auto !important;
-}
-"""
 
-demo = gr.ChatInterface(
+gr.Interface(
     fn=query_doc,
-    title="🤖 DDS Enterprise HR Assistant",
-    description="Get the latest HR information instantly.",
-    theme=gr.themes.Soft(),
-    css=custom_css,
-    examples=[
-        "What is the leave policy?",
-        "How can I claim medical expenses?",
-        "What are office working hours?"
-    ]
-)
-
-demo.launch(share=True)
+    inputs=gr.Textbox(label="Ask a question about the document"),
+    outputs=gr.Textbox(label="Answer"),
+    title="DDS Enterprise Chatbot",
+    description="Ask questions related to HR for latest Information."
+).launch(share=True)
