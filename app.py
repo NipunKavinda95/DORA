@@ -260,7 +260,6 @@ demo = gr.ChatInterface(
     description="Decoding Data Science · Ask about leave, policies, benefits, and more",
     chatbot=gr.Chatbot(
         height=460,
-        bubble_full_width=False,
         show_label=False,
         placeholder="<div style='text-align:center; color:rgba(255,255,255,0.15); font-size:16px; padding-top:80px'>Ask DORA anything about HR policies, leave, or benefits</div>",
     ),
