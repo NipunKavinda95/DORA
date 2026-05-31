@@ -73,14 +73,11 @@ dimension = 1536
 # --- Delete index if it already exists (optional) ---
 existing_indexes = [idx["name"] for idx in pc.list_indexes()]
 
-if index_name not in existing_indexes:
-    pc.create_index(
-        name=index_name,
-        dimension=dimension,
-        metric="euclidean",
-        spec=ServerlessSpec(cloud="aws", region="us-east-1"),
-    )
-    
+if index_name in existing_indexes:
+    pc.delete_index(index_name)
+pc.create_index(...)
+
+
 # --- Create Pinecone index ---
 pc.create_index(
     name=index_name,
