@@ -75,7 +75,7 @@ existing_indexes = [idx["name"] for idx in pc.list_indexes()]
 
 if index_name in existing_indexes:
     pc.delete_index(index_name)
-pc.create_index(...)
+
 
 
 # --- Create Pinecone index ---

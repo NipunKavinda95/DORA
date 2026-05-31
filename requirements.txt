@@ -6,3 +6,4 @@ llama-index-readers-file
 gradio
 llama_index.core
 dotenv
+pinecone
